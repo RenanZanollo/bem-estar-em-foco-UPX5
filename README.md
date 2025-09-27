@@ -68,7 +68,7 @@ Conta no Firebase configurada
 Chave da API da OpenAI
 
 🔹 Clonando o repositório
-git clone https://github.com/seu-usuario/bem-estar-em-foco.git
+git clone https://github.com/RenanZanollo/bem-estar-em-foco-UPX5.git
 cd bem-estar-em-foco
 
 🔹 Frontend (React Native + Expo)
