@@ -1,58 +1,44 @@
-import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, ScrollView } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../navigation/AppNavigator";
-import { api } from "../services/api";
+import React, { useState } from 'react';
+import { View, Text, TextInput, TouchableOpacity, ScrollView } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../navigation/AppNavigator';
+import { api } from '../services/api';
 
 export default function FormScreen() {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const [answers, setAnswers] = useState({
-    sono: "",
-    alimentacao: "",
-    humor: "",
-    atividade: "",
+    sono: '',
+    alimentacao: '',
+    humor: '',
+    atividade: '',
   });
 
   const handleChange = (key: string, value: string) => {
-    setAnswers({ ...answers, [key]: value });
+    setAnswers(prev => ({...prev, [key]: value}));
   };
 
   const handleSend = async () => {
-    const response = await api.post("/recommendations", { answers });
-    navigation.navigate("Result", { result: response.data.recommendations });
+    try {
+      const res = await api.post('/recommendations', { answers });
+      const rec = res.data.recommendations || res.data.recommendations;
+      navigation.navigate('Result', { result: rec });
+    } catch (err) {
+      alert('Erro ao gerar recomendações.');
+    }
   };
 
   return (
-    <ScrollView className="flex-1 bg-blue-900 p-6">
-      <Text className="text-white text-2xl font-bold mb-6">Autoavaliação de Bem-Estar</Text>
+    <ScrollView style={{flex:1, backgroundColor:'#f8fafc', padding:20}}>
+      <Text style={{fontSize:22, fontWeight:'700', marginBottom:12}}>Autoavaliação de Bem-Estar</Text>
 
-      <TextInput
-        className="bg-white rounded-lg p-3 mb-4"
-        placeholder="Como está seu sono?"
-        onChangeText={(v) => handleChange("sono", v)}
-      />
-      <TextInput
-        className="bg-white rounded-lg p-3 mb-4"
-        placeholder="Como estão seus hábitos alimentares?"
-        onChangeText={(v) => handleChange("alimentacao", v)}
-      />
-      <TextInput
-        className="bg-white rounded-lg p-3 mb-4"
-        placeholder="Como tem se sentido emocionalmente?"
-        onChangeText={(v) => handleChange("humor", v)}
-      />
-      <TextInput
-        className="bg-white rounded-lg p-3 mb-4"
-        placeholder="Com que frequência pratica atividades físicas?"
-        onChangeText={(v) => handleChange("atividade", v)}
-      />
+      <TextInput placeholder='Como está seu sono?' onChangeText={(v)=>handleChange('sono', v)} style={{backgroundColor:'#fff', padding:12, borderRadius:8, marginBottom:10}} />
+      <TextInput placeholder='Como estão seus hábitos alimentares?' onChangeText={(v)=>handleChange('alimentacao', v)} style={{backgroundColor:'#fff', padding:12, borderRadius:8, marginBottom:10}} />
+      <TextInput placeholder='Como tem se sentido emocionalmente?' onChangeText={(v)=>handleChange('humor', v)} style={{backgroundColor:'#fff', padding:12, borderRadius:8, marginBottom:10}} />
+      <TextInput placeholder='Com que frequência pratica atividades físicas?' onChangeText={(v)=>handleChange('atividade', v)} style={{backgroundColor:'#fff', padding:12, borderRadius:8, marginBottom:10}} />
 
-      <TouchableOpacity
-        onPress={handleSend}
-        className="bg-green-500 py-3 rounded-lg mt-4"
-      >
-        <Text className="text-center text-white font-semibold">Gerar Recomendações</Text>
+      <TouchableOpacity onPress={handleSend} style={{backgroundColor:'#0ea5a4', padding:14, borderRadius:8, marginTop:12}}>
+        <Text style={{textAlign:'center', color:'#fff', fontWeight:'700'}}>Gerar Recomendações</Text>
       </TouchableOpacity>
     </ScrollView>
   );
