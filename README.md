@@ -1,133 +1,224 @@
-📱 Bem-estar em Foco
+📱 Bem-Estar em Foco
+<p align="center"> <img src="https://via.placeholder.com/600x250?text=Bem-Estar+em+Foco" /> </p> <p align="center"> <i>“O primeiro passo para uma vida melhor começa com você.”</i> </p>
+🔰 Badges
+<p align="center"> <img src="https://img.shields.io/badge/React_Native-Expo-blue?logo=react" /> <img src="https://img.shields.io/badge/Node-18.19.1-green?logo=node.js" /> <img src="https://img.shields.io/badge/NestJS-Backend-red?logo=nestjs" /> <img src="https://img.shields.io/badge/Firebase-Auth%20%7C%20DB-yellow?logo=firebase" /> <img src="https://img.shields.io/badge/OpenAI-API-black?logo=openai" /> <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-orange" /> </p>
+📖 Sobre o Projeto
 
-O Bem-estar em Foco é um aplicativo mobile desenvolvido em React Native (com Expo), integrado a um backend em NestJS, que tem como objetivo ajudar pessoas a melhorarem seus hábitos de vida de forma simples e motivacional.
+O Bem-Estar em Foco é um aplicativo mobile criado para ajudar pessoas a desenvolverem hábitos saudáveis, com recomendações personalizadas e motivacionais geradas pela API da OpenAI.
 
-A ideia é que, através de perguntas rápidas do dia a dia, o usuário receba um retorno personalizado e positivo da API da OpenAI, destacando os pontos fortes de seus hábitos atuais e sugerindo pequenas mudanças para evoluir constantemente.
+Através de perguntas simples sobre sono, alimentação, humor e rotina, o app devolve orientações práticas e positivas que ajudam o usuário a evoluir de forma leve e gradual.
 
-✨ Funcionalidades atuais
+🎯 Objetivo
 
-🔑 Login e autenticação com Firebase Auth
+✔ Ajudar quem quer melhorar hábitos, mas não sabe por onde começar
+✔ Criar uma experiência acolhedora baseada em motivação
+✔ Usar IA para recomendações personalizadas
+✔ Tornar acessível o autocuidado por meio da tecnologia
 
-🏠 Tela principal com navegação simples e intuitiva
+👥 Público-Alvo
 
-✅ Novo Check: formulário com perguntas como:
+Estudantes
 
-"Como está seu sono?"
+Trabalhadores com rotina intensa
 
-"Como você está se alimentando?"
+Pessoas buscando autocuidado
 
-🤖 Análise motivacional: respostas processadas pela API da OpenAI, trazendo orientações personalizadas de forma positiva e encorajadora
+Instituições, empresas e programas de saúde
 
-🚀 Funcionalidades futuras
+✨ Funcionalidades Principais
+🧠 Inteligência Artificial Motivacional
 
-⏰ Lembretes personalizados para não esquecer seus hábitos
+Recomendações sobre hábitos baseadas nas respostas do usuário.
 
-📊 Histórico de respostas para acompanhar sua evolução
+🔑 Autenticação
 
-📈 Gráficos de progresso para visualizar melhorias ao longo do tempo
+Login via Firebase Auth.
 
-🛠️ Tecnologias utilizadas
+📝 Registro Diário
+
+Formulário simples para o check-in do dia.
+
+📲 Interface Intuitiva
+
+Desenvolvida em React Native + Expo.
+
+🚀 Funcionalidades Futuras
+Feature	Status
+⏰ Lembretes Personalizados	🔜 Em breve
+📊 Histórico de Hábitos	🔜 Em breve
+📈 Gráficos de Progresso	🔜 Em breve
+🎯 IA com contexto histórico	🔜 Em estudo
+🛠️ Tecnologias Utilizadas
 Frontend
 
-React Native com Expo
+React Native
+
+Expo
+
+TypeScript
 
 Backend
 
 NestJS
 
+TypeScript
+
 Serviços
 
-API da OpenAI para geração de respostas motivacionais
+Firebase Auth
 
-Firebase para banco de dados
+Firebase Firestore
 
-Firebase Auth para autenticação segura
+OpenAI API
 
-🎯 Objetivo do app
+⚠️ Requisitos Importantes
 
-O Bem-estar em Foco busca ajudar pessoas que querem melhorar sua qualidade de vida, mas não sabem por onde começar.
-Nosso foco é motivar: valorizar o primeiro passo dado pelo usuário (buscar ajuda) e mostrar, de forma positiva, como ele pode evoluir gradualmente em seus hábitos.
+⚠ Para evitar erros e garantir compatibilidade total o projeto recomenda:
 
-📌 Estrutura inicial do projeto
+✔ Node.js 18.19.1
+Usando NVM:
+nvm install 18.19.1
+nvm use 18.19.1
 
-frontend/ → Aplicativo em React Native com Expo
+🏗 Arquitetura da Solução
+flowchart LR
+A[App Mobile - Expo] --> B[Backend - NestJS]
+B --> C[Firebase Auth]
+B --> D[Firebase Firestore]
+B --> E[OpenAI API]
 
-backend/ → API em NestJS para comunicação com Firebase e OpenAI
+📂 Estrutura do Projeto
+bem-estar-em-foco/
+│
+├── frontend/
+│   ├── src/
+│   ├── app/
+│   └── .env
+│
+└── backend/
+    ├── src/
+    ├── prisma/
+    └── .env
 
-⚙️ Como rodar o projeto
-Pré-requisitos
+📸 Screenshots (adicione depois)
+/assets/images/screenshot1.png  
+/assets/images/screenshot2.png  
+/assets/gifs/demo.gif  
 
-Node.js (versão LTS recomendada)
+
+Exemplo:
+
+<p align="center"> <img src="https://via.placeholder.com/300x600?text=Tela+Inicial" /> <img src="https://via.placeholder.com/300x600?text=Formulário+Check" /> </p>
+⚙️ Como Rodar o Projeto
+🔧 Pré-requisitos
+
+Node.js 18.19.1
 
 Expo CLI
 
 Nest CLI
 
-Conta no Firebase configurada
+Firebase configurado
 
-Chave da API da OpenAI
+Chave da OpenAI
 
-🔹 Clonando o repositório
+🔹 1. Clonar o Repositório
 git clone https://github.com/RenanZanollo/bem-estar-em-foco-UPX5.git
 cd bem-estar-em-foco
 
-🔹 Frontend (React Native + Expo)
-
-Vá para a pasta do frontend:
-
+🔹 2. Frontend – React Native + Expo
 cd frontend
-
-
-Instale as dependências:
-
 npm install
 
-
-Configure o arquivo .env com as variáveis necessárias:
-
+Criar .env:
 FIREBASE_API_KEY=xxxx
 FIREBASE_AUTH_DOMAIN=xxxx
 FIREBASE_PROJECT_ID=xxxx
 FIREBASE_STORAGE_BUCKET=xxxx
 FIREBASE_MESSAGING_SENDER_ID=xxxx
 FIREBASE_APP_ID=xxxx
+
 BACKEND_URL=http://localhost:3000
 
-
-Rode o app:
-
+Iniciar o App
 npx expo start
 
-🔹 Backend (NestJS)
-
-Vá para a pasta do backend:
-
+🔹 3. Backend – NestJS
 cd backend
-
-
-Instale as dependências:
-
 npm install
 
-
-Configure o arquivo .env com:
-
+Criar .env:
 OPENAI_API_KEY=xxxx
 FIREBASE_PROJECT_ID=xxxx
-FIREBASE_PRIVATE_KEY=xxxx
+FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nXXXX\n-----END PRIVATE KEY-----\n"
 FIREBASE_CLIENT_EMAIL=xxxx
 
-
-Rode o servidor:
-
+Rodar servidor:
 npm run start:dev
 
-🔮 Próximos passos
+🧪 Testes
 
-Implementar sistema de notificações push para lembretes
+Backend (NestJS):
 
-Criar dashboard com histórico e gráficos
+npm run test
+npm run test:e2e
 
-Melhorar personalização das recomendações da IA
+🧱 .env.example
+Frontend
+FIREBASE_API_KEY=
+FIREBASE_AUTH_DOMAIN=
+FIREBASE_PROJECT_ID=
+FIREBASE_STORAGE_BUCKET=
+FIREBASE_MESSAGING_SENDER_ID=
+FIREBASE_APP_ID=
+BACKEND_URL=
 
-⚡ Bem-estar em Foco – o primeiro passo para uma vida melhor começa aqui.
+Backend
+OPENAI_API_KEY=
+FIREBASE_PROJECT_ID=
+FIREBASE_PRIVATE_KEY=
+FIREBASE_CLIENT_EMAIL=
+
+🛤️ Roadmap
+
+ Configurar Firebase Auth
+
+ Criar protótipo no Figma
+
+ Implementar login
+
+ Integrar OpenAI
+
+ Criar lembretes
+
+ Criar tabela histórica
+
+ Criar gráficos
+
+ Publicar na Play Store
+
+🤝 Contribuições
+
+Contribuições são bem-vindas!
+
+Para contribuir:
+
+Faça um fork
+
+Crie uma branch: feature/nova-feature
+
+Envie seu PR
+
+👥 Autores
+Nome	Função
+Carlos Augusto	Documentação
+Giovani Boccardo Ruiz	Backend
+Guilherme Mendes Alcantara	Documentação + Gestão
+Isabela Queiroz Ferreira	Design + Documentação final
+Renan Zanollo Amorim	Full-stack Developer
+📄 Licença
+
+Este projeto é de uso acadêmico (UPX5 – FACENS).
+
+⚡ Bem-estar em Foco
+“Um passo de cada vez — e nós caminhamos com você.”
