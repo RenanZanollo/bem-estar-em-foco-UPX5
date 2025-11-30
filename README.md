@@ -91,10 +91,15 @@ B --> E[OpenAI API]
 bem-estar-em-foco/
 │
 ├── frontend/
+
 │   ├── src/
+
 │   ├── app/
+
 │   └── .env
+
 │
+
 └── backend/
     ├── src/
     ├── prisma/
